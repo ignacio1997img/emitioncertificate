@@ -32,7 +32,7 @@ use App\Http\Controllers\PeopleController;
 
     Route::post('certificate/search', [HomeController::class, 'search'])->name('certificate.search');
     Route::post('certificate/code/phone', [HomeController::class, 'codePhone'])->name('certificate-code.phone');
-    Route::get('certificate/download', [HomeController::class, 'download']);
+    Route::get('certificate/download/{id?}', [HomeController::class, 'download']);
 
 
 

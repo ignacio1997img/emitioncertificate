@@ -38,13 +38,13 @@ class HomeController extends Controller
         $people = Person::where('id', $data->people_id)->first();
 
 
-        Http::get('http://whatsapp.capresi.net/?number=591'.$request->phone.'&message=Hola *'.$people->first_name.' '.$people->last_name.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado has clic en el enlace de abajo.%0A👇👇%0Ahttps://capresi.net/message/'.$request->id.'/verification');
+        Http::get('http://whatsapp.capresi.net/?number=591'.$request->phone.'&message=Hola *'.$people->first_name.' '.$people->last_name.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado has clic en el enlace de abajo.%0A👇👇%0Ahttps://capresi.net/certificate/download/'.$people->id);
 
         return true;
     }
 
 
-    public function download()
+    public function download($id)
     {
         // return 1;
 
@@ -54,7 +54,9 @@ class HomeController extends Controller
         // ->setPaper('letter', 'landscape')
         // ->stream('informe.pdf');
 
-        return view('certificate.print');
+        $people = Person::where('id', $id)->where('deleted_at', null)->first();
+
+        return view('certificate.print', compact('people'));
     }
 
 
