@@ -7,7 +7,8 @@
 
       <h1>Unidos hacia adelante</h1>
       <h2>El estudio es el camino hacia el conocimiento, y el conocimiento es la clave de la libertad</h2>
-      <div class="countdown d-flex justify-content-center" data-count="2023/04/04 09:30">
+      
+      <div class="countdown d-flex justify-content-center" data-count="2023/04/04 12:00">
         <div>
           <h3>%d</h3>
           <h4>Día</h4>
