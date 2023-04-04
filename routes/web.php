@@ -30,6 +30,11 @@ use App\Http\Controllers\PeopleController;
     Route::get('register', [HomeController::class, 'register']);
     Route::post('register/store', [PeopleController::class, 'store'])->name('people.store');
 
+    Route::post('certificate/search', [HomeController::class, 'search'])->name('certificate.search');
+    Route::post('certificate/code/phone', [HomeController::class, 'codePhone'])->name('certificate-code.phone');
+    Route::get('certificate/download', [HomeController::class, 'download']);
+
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

@@ -61,6 +61,69 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('assets/js/main.js')}}"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function() {
+      // alert(1)
+      $('#form-search').on('submit', function(e){
+          e.preventDefault();
+          
+          $('#div-results').empty();
+          // $('#div-results').loading({message: 'Cargando...'});
+          // alert(1)
+          // var loader = '<div class="col-md-12 bg"><div class="loader" id="loader-3"></div></div>'
+          // $('#div-results').html(loader);
+          $.post($('#form-search').attr('action'), $('#form-search').serialize(), function(res){
+              $('#div-results').html(res);
+          })
+          .fail(function() {
+              toastr.error('Ocurrió un error!', 'Oops!');
+          })
+          .always(function() {
+              $('#div-results').loading('toggle');
+              $('html, body').animate({
+                  scrollTop: $("#div-results").offset().top - 70
+              }, 500);
+          });
+      });
+    });
+    function codeVerification(id, phone)
+    {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Codigo Enviado',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+      // var nombre = $('#name').val();
+      var id = id;
+      var phone = phone;
+      var token = '{{csrf_token()}}';// ó $("#token").val() si lo tienes en una etiqueta html.
+      var data={id:id,phone:phone,_token:token};
+      $.ajax({
+          type: "post",
+          url: "{{route('certificate-code.phone')}}",
+          data: data,
+          success: function (msg) {
+            // alert(1)
+                  // alert("Se ha realizado el POST con exito "+msg);
+                  // $("#codeVerification").attr("disabled", false)
+                  // $("#codeVerification").on('paste', function(e){
+                  //   e.preventDefault();
+                  //   // alert('Esta acción está prohibida');
+                  // })
+          }
+      });
+
+      $('#div-results').empty();
+      $('#ci').empty();
+            
+    }
+  </script>
 
 </body>
 

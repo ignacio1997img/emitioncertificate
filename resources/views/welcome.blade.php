@@ -6,7 +6,7 @@
     <div class="container d-flex flex-column align-items-center">
 
       <h1>Unidos hacia adelante</h1>
-      <h2>El estudios es el camino hacia el conocimiento, y el conocimiento es la clave de la libertad</h2>
+      <h2>El estudio es el camino hacia el conocimiento, y el conocimiento es la clave de la libertad</h2>
       <div class="countdown d-flex justify-content-center" data-count="2023/04/04 09:30">
         <div>
           <h3>%d</h3>
@@ -28,9 +28,10 @@
 
       <div class="subscribe">
         <h4>Ingresa tu CI!</h4>
-        <form action="forms/notify.php" method="post" role="form" class="php-email-form">
+        <form name="form_search" id="form-search" action="{{ route('certificate.search') }}" method="post" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+        @csrf
           <div class="subscribe-form">
-            <input type="text" name="email"><input type="submit" value="Buscar">
+            <input type="text" name="ci" id="ci"><input type="submit" value="Buscar">
           </div>
           <div class="mt-2">
             <div class="loading">Loading</div>
@@ -38,6 +39,16 @@
             <div class="sent-message">Your notification request was sent. Thank you!</div>
           </div>
         </form>
+        
+      </div>
+      <div class="row" data-aos="fade-up">
+
+        <div class="col-md-12">
+          <div class="stats-item text-center w-10000 h-100" id="div-results" style="text-align: center; background-color: #EBEBEB; border-radius: 40px;">
+            {{-- <p style="color: black">Sin Datos</p> --}}
+            
+          </div>
+        </div><!-- End Stats Item -->
       </div>
       <br>
       <a href="{{url('register')}}"><small style="color:rgb(205, 205, 205); font-size: 25px"><i class="fa-regular fa-address-card"></i> Registrate Aqui..</small></a>

@@ -7,7 +7,7 @@
 
       <h1>Registrate</h1>
       {{-- <h2>We're working hard to improve our website and we'll ready to launch after</h2>7 --}}
-      <div class="row countdown d-flex justify-content-center" data-count="2023/12/5">
+      <div class="row countdown d-flex justify-content-center" data-count="2023/04/04 09:30">
         <div>
           <h3>%d</h3>
           <h4>Día</h4>
