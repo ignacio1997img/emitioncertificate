@@ -51,7 +51,7 @@ class HomeController extends Controller
         $people = Person::where('id', $id)->where('deleted_at', null)->first();
 
         return PDF::loadView('certificate.print', compact('people') )
-        ->setPaper('A4', 'portrait')
+        ->setPaper('A4', 'landscape')
         ->stream('CERTIFICADO.pdf');
 
         // $people = Person::where('id', $id)->where('deleted_at', null)->first();
