@@ -50,9 +50,9 @@ class HomeController extends Controller
 
         
 
-        // return PDF::loadView('certificate.print' )
-        // ->setPaper('letter', 'landscape')
-        // ->stream('informe.pdf');
+        return PDF::loadView('certificate.print' )
+        ->setPaper('letter', 'landscape')
+        ->stream('informe.pdf');
 
         $people = Person::where('id', $id)->where('deleted_at', null)->first();
 
