@@ -52,7 +52,8 @@
         </div><!-- End Stats Item -->
       </div>
       <br>
-      <a href="{{url('register')}}"><small style="color:rgb(205, 205, 205); font-size: 25px"><i class="fa-regular fa-address-card"></i> Registrate Aqui..</small></a>
+      {{-- <input type="submit" value="Buscar"> --}}
+      <a href="{{url('register')}}" class="btn-primary"><small style="color:rgb(205, 205, 205); font-size: 25px"><i class="fa-regular fa-address-card"></i> Registrate Aqui..</small></a>
       <br><br><br>
       <div class="social-links text-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
