@@ -52,7 +52,7 @@ class HomeController extends Controller
 
         return PDF::loadView('certificate.print', compact('people') )
         ->setPaper('A4', 'landscape')
-        ->stream('informe.pdf');
+        ->stream('CERTIFICADO.pdf');
 
         // $people = Person::where('id', $id)->where('deleted_at', null)->first();
 
