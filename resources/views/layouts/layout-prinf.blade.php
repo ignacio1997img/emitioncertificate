@@ -19,7 +19,7 @@
             font-family: Arial, sans-serif;
             font-weight: 100; */
 
-            background: url('/../image/certificate.jpg')  top center no-repeat;
+            background: url('{{ asset("image/certificate.jpg") }}')  top center no-repeat;
 
             
             font-family: "Open Sans", sans-serif;

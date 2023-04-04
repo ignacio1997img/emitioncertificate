@@ -7,8 +7,6 @@
     <br><br><br>
     <br><br><br>
     <br><br><br>
-    <br><br><br>
-    <br>
     <table width="100%">
         <tr>   
             <td style="text-align: center;  width:95%">
