@@ -38,7 +38,7 @@ class HomeController extends Controller
         $people = Person::where('id', $data->people_id)->first();
 
 
-        Http::get('http://whatsapp.tecnologiaweb.org/?number=591'.$request->phone.'&message=Hola *'.$people->first_name.' '.$people->last_name.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado has clic en el enlace de abajo.%0A👇👇%0Acertificado.capresi.net/certificate/download/'.$people->id);
+        Http::get('http://whatsapp.tecnologiaweb.org/?number=591'.$request->phone.'&message=Hola *'.$people->first_name.' '.$people->last_name.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado has clic en el enlace de abajo.%0A👇👇%0Ahttps://certificado.capresi.net//certificate/download/'.$people->id);
 
         return true;
     }
